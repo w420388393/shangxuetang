@@ -6,7 +6,7 @@
 
 <script>
   import MyItem from './MyItem'
-  const todoOptions = ["打代码","睡觉","吃饭"]
+  
   export default {
     name:'MyList',
     components:{
@@ -14,7 +14,17 @@
     },
     data(){
       return {
-        todos:todoOptions
+        todos:[
+          {id:'001',name:"打代码"},
+          {id:'002',name:"睡觉"},
+          {id:'003',name:"吃饭"}
+        ]
+      }
+    },
+    methods:{
+      add(){
+        const p = MyItem//{id:'004',name:'老刘',age:40}
+						this.persons.unshift(p)
       }
     }
     
