@@ -1,33 +1,23 @@
 <template> 
   <ul class="todo-main">
-    <MyItem/>
+    <!-- <MyItem/> -->
+    <li v-for="(t,index) in todos" :key = "index">
+      <input type="checkbox">{{t.title}} 
+    </li>
+    
   </ul>
 </template>
 
 <script>
   import MyItem from './MyItem'
-  
+
   export default {
     name:'MyList',
     components:{
-      MyItem
+      MyItem,
     },
-    data(){
-      return {
-        todos:[
-          {id:'001',name:"打代码"},
-          {id:'002',name:"睡觉"},
-          {id:'003',name:"吃饭"}
-        ]
-      }
-    },
-    methods:{
-      add(){
-        const p = MyItem//{id:'004',name:'老刘',age:40}
-						this.persons.unshift(p)
-      }
-    }
-    
+    props:['todos']
+   
   }
 </script>
 <style scoped>

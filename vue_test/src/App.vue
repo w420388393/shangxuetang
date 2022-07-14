@@ -14,12 +14,27 @@
   import MyHeader from './components/MyHeader'
   import MyFooter from './components/MyFooter'
   import MyList from './components/MyList'
+  
   export default {
     name:"App",
     components:{
       MyHeader ,
       MyFooter,
       MyList
+    },
+    data(){
+      return {
+        todos:[
+          {id:'001',title:'抽烟',done:true},
+					{id:'002',title:'喝酒',done:false},
+					{id:'003',title:'开车',done:true}
+        ]
+      }
+    },
+    methods:{
+      addTodo(todoObj){
+         this.todos.unshift(todoObj)
+      }
     }
   } 
 </script>

@@ -1,13 +1,26 @@
 <template> 
   <div class="todo-header">
-    <input type="text" placeholder="请输入你的任务名称，按回车键确认"/>
+    <input v-model = "title" @keyup.enter = "add" type="text" placeholder="请输入你的任务名称，按回车键确认"/>
   </div>
 </template>
 
 <script>
   export default {
     name:'MyHeader',
-    
+    props:['addTodo'],
+    data(){
+      return{
+        title:""
+      }
+    },
+    methods:{
+      add(){
+        console.log(this.title)
+        this.addTodo( {id:'004',title:'抽烟1',done:true})
+        //  console.log("====="+this.todos)
+        //return this.newTodo
+      }
+    }
   }
 </script>
 <style scoped>
